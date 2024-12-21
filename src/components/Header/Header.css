@@ -1,0 +1,150 @@
+.header {
+  background: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 41px 14px 40px;
+}
+
+.header__menu {
+  display: flex;
+}
+
+.header__menu a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #858796;
+}
+
+.header__menu-burger {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-team {
+  margin-right: 60px;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-team svg {
+  fill: rgb(102 102 102);
+  margin-right: 10px;
+}
+
+.header__menu-tasks {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-tasks a {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-tasks svg {
+  margin-left: 11px;
+}
+
+.header__menu-tasks-items {
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  width: 150px;
+  height: 113px;
+  box-shadow: 0 4px 20px 0 rgba(102, 102, 102, 0.15);
+  background: #fff;
+  box-sizing: border-box;
+  top: 60px;
+  padding: 30px 30px 15px 20px;
+}
+
+.header__menu-tasks-item {
+  font-size: 14px;
+  color: #686464;
+  padding-bottom: 15px;
+}
+
+.header__menu-tasks a:hover,
+.header__menu-team a:hover,
+.header__menu-tasks a:hover path {
+  fill: #3d63d2;
+  color: #3d63d2;
+}
+
+/* при наведении открывается блок с выпадающим списком */
+.header__menu-tasks:hover .header__menu-tasks-items {
+  display: block;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  /*смещение для выпадающий списка*/
+  position: relative;
+}
+
+.header__search-block {
+  display: flex;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  width: 373px;
+  height: 40px;
+  background: #efeff5;
+}
+
+.header__search-input {
+  display: flex;
+  margin: 12px 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.header__search-input svg {
+  margin-right: 10px;
+  width: 14px;
+  height: 14px;
+  fill: rgb(133, 135, 150);
+}
+
+.header__search-input input {
+  font-size: 14px;
+  color: #000;
+  border: 0;
+  width: 100%;
+  background: #efeff5;
+  /*    убираем обводку*/
+  outline: none;
+}
+
+.header__search-stat {
+  width: 20px;
+  height: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.header__search-stat svg {
+  fill: rgb(102 102 102);
+  margin-right: 10px;
+}
+
+.header__search-stat:hover path {
+  fill: #467df2;
+}
+
+.header__search-button {
+  border-radius: 10px;
+  width: 83px;
+  height: 40px;
+  background: #467df2;
+  border: 0;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+}
+
+.header__search-button:hover {
+  background: #2f54a3;
+  cursor: pointer;
+}
