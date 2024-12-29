@@ -1,17 +1,17 @@
-import './Main.css'
+import styles from './Main.module.css'
 
 export default function Main() {
   return (
-    <div className="main">
-      <h1 className='main__title'>Карточки</h1>
-      <div className="main__items">
-        <div className="block">
-          <div className="block__title">Тема</div>
-          <div className='block__text'>Слово</div>
-          <div className='block__text'>Основное значение</div>
-          <div className='block__text'>Транскрипция</div>
-          <div className='block__text'>Перевод</div>
-          <nav className="block__icons">
+    <div className={styles.main}>
+      <h1 className={styles.main__title}>Карточки</h1>
+      <div className={styles.main__items}>
+        <div className={styles.block}>
+          <div className={styles.block__title}>Тема</div>
+          <div className={styles.block__text}>Слово</div>
+          <div className={styles.block__text}>Основное значение</div>
+          <div className={styles.block__text}>Транскрипция</div>
+          <div className={styles.block__text}>Перевод</div>
+          <nav className={styles.block__icons}>
             <ul>
               <li>
                 <a href="#">
@@ -43,13 +43,13 @@ export default function Main() {
             </ul>
           </nav>
         </div>
-        <div className="block">
-          <div className="block__title">Тема</div>
-          <div className='block__text'>Слово</div>
-          <div className='block__text'>Основное значение</div>
-          <div className='block__text'>Транскрипция</div>
-          <div className='block__text'>Перевод</div>
-          <nav className="block__icons">
+        <div className={styles.block}>
+          <div className={styles.block__title}>Тема</div>
+          <div className={styles.block__text}>Слово</div>
+          <div className={styles.block__text}>Основное значение</div>
+          <div className={styles.block__text}>Транскрипция</div>
+          <div className={styles.block__text}>Перевод</div>
+          <nav className={styles.block__icons}>
             <ul>
               <li>
                 <a href="#">
@@ -81,13 +81,13 @@ export default function Main() {
             </ul>
           </nav>
         </div>
-        <div className="block">
-          <div className="block__title">Тема</div>
-          <div className='block__text'>Слово</div>
-          <div className='block__text'>Основное значение</div>
-          <div className='block__text'>Транскрипция</div>
-          <div className='block__text'>Перевод</div>
-          <nav className="block__icons">
+        <div className={styles.block}>
+          <div className={styles.block__title}>Тема</div>
+          <div className={styles.block__text}>Слово</div>
+          <div className={styles.block__text}>Основное значение</div>
+          <div className={styles.block__text}>Транскрипция</div>
+          <div className={styles.block__text}>Перевод</div>
+          <nav className={styles.block__icons}>
             <ul>
               <li>
                 <a href="#">
@@ -119,13 +119,13 @@ export default function Main() {
             </ul>
           </nav>
         </div>
-        <div className="block">
-          <div className="block__title">Тема</div>
-          <div className='block__text'>Слово</div>
-          <div className='block__text'>Основное значение</div>
-          <div className='block__text'>Транскрипция</div>
-          <div className='block__text'>Перевод</div>
-          <nav className="block__icons">
+        <div className={styles.block}>
+          <div className={styles.block__title}>Тема</div>
+          <div className={styles.block__text}>Слово</div>
+          <div className={styles.block__text}>Основное значение</div>
+          <div className={styles.block__text}>Транскрипция</div>
+          <div className={styles.block__text}>Перевод</div>
+          <nav className={styles.block__icons}>
             <ul>
               <li>
                 <a href="#">
@@ -157,13 +157,13 @@ export default function Main() {
             </ul>
           </nav>
         </div>
-        <div className="block">
-          <div className="block__title">Тема</div>
-          <div className='block__text'>Слово</div>
-          <div className='block__text'>Основное значение</div>
-          <div className='block__text'>Транскрипция</div>
-          <div className='block__text'>Перевод</div>
-          <nav className="block__icons">
+        <div className={styles.block}>
+          <div className={styles.block__title}>Тема</div>
+          <div className={styles.block__text}>Слово</div>
+          <div className={styles.block__text}>Основное значение</div>
+          <div className={styles.block__text}>Транскрипция</div>
+          <div className={styles.block__text}>Перевод</div>
+          <nav className={styles.block__icons}>
             <ul>
               <li>
                 <a href="#">

@@ -1,23 +1,23 @@
-import './Header.css'
+import styles from './Header.module.css'
 
 export default function Header() {
   return (
-    <div className="header">
-      <div className="header__menu">
-        <div className="header__menu-burger">
+    <div className={styles.header}>
+      <div className={styles.header__menu} >
+        <div className={styles.header__menuBurger}>
           <svg width="38" height="22" viewBox="0 0 38 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="38" height="2" rx="1" fill="#4F4E4F" />
             <rect y="10" width="38" height="2" rx="1" fill="#4F4E4F" />
             <rect y="20" width="26" height="2" rx="1" fill="#4F4E4F" />
           </svg>
         </div>
-        <div className="header__menu-team">
+        <div className={styles.header__menuTeam}>
           <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="20" height="20">
             <path d="M23.836,8.794a3.179,3.179,0,0,0-3.067-2.226H16.4L15.073,2.432a3.227,3.227,0,0,0-6.146,0L7.6,6.568H3.231a3.227,3.227,0,0,0-1.9,5.832L4.887,15,3.535,19.187A3.178,3.178,0,0,0,4.719,22.8a3.177,3.177,0,0,0,3.8-.019L12,20.219l3.482,2.559a3.227,3.227,0,0,0,4.983-3.591L19.113,15l3.56-2.6A3.177,3.177,0,0,0,23.836,8.794Zm-2.343,1.991-4.144,3.029a1,1,0,0,0-.362,1.116L18.562,19.8a1.227,1.227,0,0,1-1.895,1.365l-4.075-3a1,1,0,0,0-1.184,0l-4.075,3a1.227,1.227,0,0,1-1.9-1.365L7.013,14.93a1,1,0,0,0-.362-1.116L2.507,10.785a1.227,1.227,0,0,1,.724-2.217h5.1a1,1,0,0,0,.952-.694l1.55-4.831a1.227,1.227,0,0,1,2.336,0l1.55,4.831a1,1,0,0,0,.952.694h5.1a1.227,1.227,0,0,1,.724,2.217Z" />
           </svg>
           <a href="#">My Team</a>
         </div>
-        <div className="header__menu-tasks">
+        <div className={styles.header__menuTasks}>
           <a href="#">Tasks
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_2_86)">
@@ -33,16 +33,16 @@ export default function Header() {
           </a>
 
           {/* <!--  выпадающий список задач--> */}
-          <div className="header__menu-tasks-items">
-            <div className="header__menu-tasks-item">Tasks Today</div>
-            <div className="header__menu-tasks-item">Tasks Yesterday</div>
+          <div className={styles.header__menuTasksItems}>
+            <div className={styles.header__menuTasksItem}>Tasks Today</div>
+            <div className={styles.header__menuTasksItem}>Tasks Yesterday</div>
           </div>
         </div>
-      </div>
+      </div >
 
-      <div className="header__search">
-        <div className="header__search-block">
-          <div className="header__search-input">
+      <div className={styles.header__search}>
+        <div className={styles.header__searchBlock}>
+          <div className={styles.header__searchInput}>
             <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="20" height="20">
               <path d="M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z" />
             </svg>
@@ -51,7 +51,7 @@ export default function Header() {
             <input type="text" placeholder="Search..." />
           </div>
         </div>
-        <a href="#" className="header__search-stat">
+        <a href="#" className={styles.header__searchStat}>
           <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20" height="20">
             <path d="M23,22H5a3,3,0,0,1-3-3V1A1,1,0,0,0,0,1V19a5.006,5.006,0,0,0,5,5H23a1,1,0,0,0,0-2Z" />
             <path d="M6,20a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7A1,1,0,0,0,6,20Z" />
@@ -61,8 +61,8 @@ export default function Header() {
             <path d="M6,9a1,1,0,0,0,.707-.293l3.586-3.586a1.025,1.025,0,0,1,1.414,0l2.172,2.172a3,3,0,0,0,4.242,0l5.586-5.586A1,1,0,0,0,22.293.293L16.707,5.878a1,1,0,0,1-1.414,0L13.121,3.707a3,3,0,0,0-4.242,0L5.293,7.293A1,1,0,0,0,6,9Z" />
           </svg>
         </a>
-        <button className="header__search-button">Upload</button>
+        <button className={styles.header__searchButton}>Upload</button>
       </div>
-    </div>
+    </div >
   )
 }

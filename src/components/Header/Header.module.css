@@ -15,38 +15,38 @@
   color: #858796;
 }
 
-.header__menu-burger {
+.header__menuBurger {
   display: flex;
   align-items: center;
 }
 
-.header__menu-team {
+.header__menuTeam {
   margin-right: 60px;
   margin-left: 40px;
   display: flex;
   align-items: center;
 }
 
-.header__menu-team svg {
+.header__menuTeam svg {
   fill: rgb(102 102 102);
   margin-right: 10px;
 }
 
-.header__menu-tasks {
+.header__menuTasks {
   display: flex;
   align-items: center;
 }
 
-.header__menu-tasks a {
+.header__menuTasks a {
   display: flex;
   align-items: center;
 }
 
-.header__menu-tasks svg {
+.header__menuTasks svg {
   margin-left: 11px;
 }
 
-.header__menu-tasks-items {
+.header__menuTasksItems {
   display: none;
   position: absolute;
   border-radius: 10px;
@@ -59,21 +59,21 @@
   padding: 30px 30px 15px 20px;
 }
 
-.header__menu-tasks-item {
+.header__menuTasksItem {
   font-size: 14px;
   color: #686464;
   padding-bottom: 15px;
 }
 
-.header__menu-tasks a:hover,
-.header__menu-team a:hover,
-.header__menu-tasks a:hover path {
+.header__menuTasks a:hover,
+.header__menuTeam a:hover,
+.header__menuTasks a:hover path {
   fill: #3d63d2;
   color: #3d63d2;
 }
 
 /* при наведении открывается блок с выпадающим списком */
-.header__menu-tasks:hover .header__menu-tasks-items {
+.header__menuTasks:hover .header__menuTasksItems {
   display: block;
 }
 
@@ -84,7 +84,7 @@
   position: relative;
 }
 
-.header__search-block {
+.header__searchBlock {
   display: flex;
   border: 1px solid #e2e2e2;
   border-radius: 10px;
@@ -93,21 +93,21 @@
   background: #efeff5;
 }
 
-.header__search-input {
+.header__searchInput {
   display: flex;
   margin: 12px 20px;
   align-items: center;
   width: 100%;
 }
 
-.header__search-input svg {
+.header__searchInput svg {
   margin-right: 10px;
   width: 14px;
   height: 14px;
   fill: rgb(133, 135, 150);
 }
 
-.header__search-input input {
+.header__searchInput input {
   font-size: 14px;
   color: #000;
   border: 0;
@@ -117,23 +117,23 @@
   outline: none;
 }
 
-.header__search-stat {
+.header__searchStat {
   width: 20px;
   height: 20px;
   margin-left: 40px;
   margin-right: 40px;
 }
 
-.header__search-stat svg {
+.header__searchStat svg {
   fill: rgb(102 102 102);
   margin-right: 10px;
 }
 
-.header__search-stat:hover path {
+.header__searchStat:hover path {
   fill: #467df2;
 }
 
-.header__search-button {
+.header__searchButton {
   border-radius: 10px;
   width: 83px;
   height: 40px;
@@ -144,7 +144,7 @@
   color: #fff;
 }
 
-.header__search-button:hover {
+.header__searchButton:hover {
   background: #2f54a3;
   cursor: pointer;
 }
