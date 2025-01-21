@@ -31,3 +31,7 @@ button svg {
 button:hover svg {
   box-shadow: 0 0px 20px rgba(80, 168, 240, 0.855);
 }
+
+.h1 {
+  color: #467df2;
+}
