@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import WordList from './components/WordList/WordList';
 import Flashcards from './components/Flashcards/Flashcards';
 import Training from './components/Training/Training';
+import NoMatch from './components/NoMatch/NoMatch';
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
             <Route path="/words" element={<WordList />} />
             <Route path="/flashcards" element={<Flashcards />} />
             <Route path="/training" element={<Training />} />
+            {/* *-для всех вывдим ошибку, если не найдена */}
+            <Route path='*' element={<NoMatch />} />
           </Routes>
         </div>
       </div>
