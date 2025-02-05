@@ -7,7 +7,8 @@ import styles from './Flashcards.module.css'
 const Flashcards = () => {
   const [words, setWords] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showTranslation, setShowTranslation] = useState(false);
+  const [showTranslation, setShowTranslation] = useState(false);//показать перевод
+  const [wordsLearned, setWordsLearned] = useState(0); // Для подсчета изученных слов
 
   useEffect(() => {
     const fetchWords = async () => {
@@ -17,13 +18,15 @@ const Flashcards = () => {
     fetchWords();
   }, []);
 
+  // следующая карточка
   const handleNext = () => {
-    setShowTranslation(false);
+    setShowTranslation(false);//перевод скрыт
     setCurrentIndex((currentIndex + 1) % words.length);
   };
 
+  // предыдущая карточка
   const handlePrevious = () => {
-    setShowTranslation(false);
+    setShowTranslation(false);//перевод скрыт
     setCurrentIndex((currentIndex - 1 + words.length) % words.length);
   };
 
@@ -41,6 +44,7 @@ const Flashcards = () => {
   return (
     <div>
       <h1 className={styles.h1}>Проверьте себя открыв перевод слова</h1>
+
       <div className={styles.flashCard}>
         <button onClick={handlePrevious} className={styles.buttonCard}>
           <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="40" height="40">
@@ -56,7 +60,11 @@ const Flashcards = () => {
               <p>{currentWord.russian}</p>
             )
             : (
-              <button className={styles.cardRusBtn} onClick={() => setShowTranslation(true)}>Показать перевод</button>
+              <button className={styles.cardRusBtn} onClick={() => {
+                setShowTranslation(true);
+                // увеличиваем счетчик изученных слов
+                setWordsLearned((prevCount) => prevCount + 1);
+              }}>Показать перевод</button>
             )}
         </div>
         <button onClick={handleNext} className={styles.buttonCard}>
@@ -66,6 +74,7 @@ const Flashcards = () => {
           {/* Вправо */}
         </button>
       </div>
+      <h3 className={styles.h3}>Изучено слов: {wordsLearned}/{words.length}</h3>
     </div>
   );
 };
