@@ -10,6 +10,7 @@ const Flashcards = () => {
   const [showTranslation, setShowTranslation] = useState(false);//показать перевод
   const [wordsLearned, setWordsLearned] = useState(0); // Для подсчета изученных слов
 
+
   useEffect(() => {
     const fetchWords = async () => {
       const response = await axios.get('http://itgirlschool.justmakeit.ru/api/words');
@@ -28,6 +29,17 @@ const Flashcards = () => {
   const handlePrevious = () => {
     setShowTranslation(false);//перевод скрыт
     setCurrentIndex((currentIndex - 1 + words.length) % words.length);
+  };
+
+  // подсчет изученных
+  const countWords = () => {
+    let learnedWords = wordsLearned;
+
+    if (learnedWords !== words.length) {
+      setWordsLearned(learnedWords + 1);
+    } else {
+      setWordsLearned(words.length);
+    }
   };
 
   if (words.length === 0) {
@@ -63,7 +75,7 @@ const Flashcards = () => {
               <button className={styles.cardRusBtn} onClick={() => {
                 setShowTranslation(true);
                 // увеличиваем счетчик изученных слов
-                setWordsLearned((prevCount) => prevCount + 1);
+                setWordsLearned(countWords);
               }}>Показать перевод</button>
             )}
         </div>

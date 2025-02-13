@@ -12,6 +12,8 @@ const Training = () => {
   const [options, setOptions] = useState([]);
   // selected для отслеживания выбранного варианта.
   const [selected, setSelected] = useState(null);
+  const [wordsLearned, setWordsLearned] = useState(0); // Для подсчета изученных слов
+
 
   useEffect(() => {
     const fetchWords = async () => {
@@ -33,7 +35,7 @@ const Training = () => {
     const otherWords = words.filter((_, index) => index !== curIndex);
     // заданное и 2 случайных
     const randomOptions = [correctWord, ...otherWords.sort(() => 0.5 - Math.random()).slice(0, 2)];
-    console.log(randomOptions);
+    // console.log(randomOptions);
     setOptions(randomOptions.sort(() => 0.5 - Math.random()));
   };
 
@@ -48,6 +50,17 @@ const Training = () => {
   // handleSelect для отслеживания выбранного варианта и изменения цвета кнопки в зависимости от правильности ответа.
   const handleSelect = (option) => {
     setSelected(option);
+  };
+
+  // подсчет изученных
+  const countWords = () => {
+    let learnedWords = wordsLearned;
+
+    if (learnedWords !== words.length) {
+      setWordsLearned(learnedWords + 1);
+    } else {
+      setWordsLearned(words.length);
+    }
   };
 
   if (words.length === 0) return <div>Загрузка...</div>;
@@ -69,7 +82,11 @@ const Training = () => {
           {options.map((option, index) => (
             <button className={styles.btnCard}
               key={index}
-              onClick={() => handleSelect(option)}
+              onClick={() => {
+                handleSelect(option);
+                if (option.russian === currentWord.russian) { setWordsLearned(countWords) }
+
+              }}
               style={{
                 backgroundColor: selected
                   ? option.russian === currentWord.russian
@@ -77,6 +94,7 @@ const Training = () => {
                     : 'lightcoral'
                   : 'initial',
               }}
+
             >
               {option.russian}
             </button>
@@ -89,6 +107,7 @@ const Training = () => {
           {/* Вправо */}
         </button>
       </div>
+      <h3 className={styles.h3}>Изучено слов: {wordsLearned}/{words.length}</h3>
     </div>
   );
 };
