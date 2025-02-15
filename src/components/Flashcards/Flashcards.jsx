@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import styles from './Flashcards.module.css'
 // import NoMatch from '../NoMatch/NoMatch'
@@ -10,11 +10,16 @@ const Flashcards = () => {
   const [showTranslation, setShowTranslation] = useState(false);//показать перевод
   const [wordsLearned, setWordsLearned] = useState(0); // Для подсчета изученных слов
 
+  // для фокуса на кнопке проверки слова
+  const ref = useRef();
 
   useEffect(() => {
     const fetchWords = async () => {
       const response = await axios.get('http://itgirlschool.justmakeit.ru/api/words');
       setWords(response.data);
+
+      // для фокуса на кнопке проверки слова
+      ref.current.focus();
     };
     fetchWords();
   }, []);
@@ -58,7 +63,9 @@ const Flashcards = () => {
       <h1 className={styles.h1}>Проверьте себя открыв перевод слова</h1>
 
       <div className={styles.flashCard}>
-        <button onClick={handlePrevious} className={styles.buttonCard}>
+        <button
+          onClick={handlePrevious}
+          className={styles.buttonCard}>
           <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="40" height="40">
             <path d="M24,12A12,12,0,1,0,12,24,12.013,12.013,0,0,0,24,12ZM2,12A10,10,0,1,1,12,22,10.011,10.011,0,0,1,2,12Zm8.879,5.707a1,1,0,0,0,0-1.414L7.587,13,18,12.993a1,1,0,0,0,0-2L7.586,11l3.293-3.293A1,1,0,1,0,9.49,6.269l-.025.024L5.879,9.878a3,3,0,0,0,0,4.243h0l3.586,3.586A1,1,0,0,0,10.879,17.707Z" />
           </svg>
@@ -72,14 +79,21 @@ const Flashcards = () => {
               <p>{currentWord.russian}</p>
             )
             : (
-              <button className={styles.cardRusBtn} onClick={() => {
-                setShowTranslation(true);
-                // увеличиваем счетчик изученных слов
-                setWordsLearned(countWords);
-              }}>Показать перевод</button>
+              <button
+                className={styles.cardRusBtn}
+                // для фокуса на кнопке проверки слова
+                ref={ref}
+
+                onClick={() => {
+                  setShowTranslation(true);
+                  // увеличиваем счетчик изученных слов
+                  setWordsLearned(countWords);
+                }}>Показать перевод</button>
             )}
         </div>
-        <button onClick={handleNext} className={styles.buttonCard}>
+        <button
+          onClick={handleNext}
+          className={styles.buttonCard}>
           <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="40" height="40">
             <path d="M0,12A12,12,0,1,0,12,0,12.013,12.013,0,0,0,0,12Zm22,0A10,10,0,1,1,12,2,10.011,10.011,0,0,1,22,12ZM13.121,6.293a1,1,0,0,0,0,1.414L16.413,11,6,11.007a1,1,0,1,0,0,2L16.414,13l-3.293,3.293a1,1,0,1,0,1.389,1.438l.025-.024,3.586-3.585a3,3,0,0,0,0-4.243h0L14.535,6.293A1,1,0,0,0,13.121,6.293Z" />
           </svg>

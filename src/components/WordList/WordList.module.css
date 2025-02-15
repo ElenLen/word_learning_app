@@ -35,3 +35,15 @@ button:hover svg {
 .h1 {
   color: #467df2;
 }
+
+.error {
+  border: 1px solid red;
+}
+
+.svgDis {
+  fill: #afafb4;
+}
+
+.btnDis {
+  cursor: no-drop;
+}
