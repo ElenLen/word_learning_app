@@ -63,7 +63,27 @@ const Training = () => {
     }
   };
 
-  if (words.length === 0) return <div>Загрузка...</div>;
+  // загрузка
+  if (words.length === 0) {
+    return (
+      <div className={styles.loadNew}>
+        Загрузка...
+
+        <div className={styles.overlayLoader}>
+          <div className={styles.loader}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+      </div>
+    )
+  };
 
   const currentWord = words[currentIndex];
 
@@ -90,7 +110,7 @@ const Training = () => {
               style={{
                 backgroundColor: selected
                   ? option.russian === currentWord.russian
-                    ? 'limegreen'
+                    ? 'yellowgreen'
                     : 'lightcoral'
                   : 'initial',
               }}

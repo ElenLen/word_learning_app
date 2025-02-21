@@ -47,11 +47,24 @@ const Flashcards = () => {
     }
   };
 
+  // загрузка
   if (words.length === 0) {
     return (
-      <div>
+      <div className={styles.loadNew}>
         Загрузка...
-        {/* <NoMatch /> */}
+
+        <div className={styles.overlayLoader}>
+          <div className={styles.loader}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
       </div>
     )
   };
