@@ -65,7 +65,7 @@ const WordList = () => {
       <table className={styles.table} >
         <thead >
           <tr>
-            <th>(id)</th>
+            {/* <th>(id)</th> */}
             <th>Слово на английском</th>
             <th>Транскрипция</th>
             <th>Перевод на русском</th>
@@ -75,9 +75,64 @@ const WordList = () => {
           </tr>
         </thead>
         <tbody>
+
+          <tr className={styles.newLine}>
+            {/* <td>Новое слово</td> */}
+            <td>
+              <input
+                type="text"
+                name="english"
+                value={newWord.english}
+                onChange={(e) => handleChange(e)}
+                className={!newWord.english ? styles.error : ''}
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="transcription"
+                value={newWord.transcription}
+                onChange={(e) => handleChange(e)}
+                className={!newWord.transcription ? styles.error : ''}
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="russian"
+                value={newWord.russian}
+                onChange={(e) => handleChange(e)}
+                className={!newWord.russian ? styles.error : ''}
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="tags"
+                value={newWord.tags}
+                onChange={(e) => handleChange(e)}
+                className={!newWord.tags ? styles.error : ''}
+              />
+            </td>
+            <td>
+              <button onClick={addWord}
+                disabled={!newWord.english || !newWord.transcription || !newWord.russian || !newWord.tags}
+                title={(!newWord.english || !newWord.transcription || !newWord.russian || !newWord.tags) ? "Заполните все поля" : "Добавить"}
+                className={(!newWord.english || !newWord.transcription || !newWord.russian || !newWord.tags) ? styles.btnDisNew : styles.newLine}
+              >
+                Добавить
+                <svg
+                  className={(!newWord.english || !newWord.transcription || !newWord.russian || !newWord.tags) ? styles.svgDis : ''}
+                  fill="rgb(87, 87, 87)"
+                  id="Layer_1" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m16 16a1 1 0 0 1 -1 1h-2v2a1 1 0 0 1 -2 0v-2h-2a1 1 0 0 1 0-2h2v-2a1 1 0 0 1 2 0v2h2a1 1 0 0 1 1 1zm6-5.515v8.515a5.006 5.006 0 0 1 -5 5h-10a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h4.515a6.958 6.958 0 0 1 4.95 2.05l3.484 3.486a6.951 6.951 0 0 1 2.051 4.949zm-6.949-7.021a5.01 5.01 0 0 0 -1.051-.78v4.316a1 1 0 0 0 1 1h4.316a4.983 4.983 0 0 0 -.781-1.05zm4.949 7.021c0-.165-.032-.323-.047-.485h-4.953a3 3 0 0 1 -3-3v-4.953c-.162-.015-.321-.047-.485-.047h-4.515a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3z" />
+                  <path fill="none" />
+                </svg>
+              </button>
+            </td>
+          </tr>
+
           {words.map((word, index) => (
             <tr key={word.id}>
-              <td>{word.id}</td>
               <td>
                 {editingIndex === index ? (
                   <input
@@ -192,60 +247,10 @@ const WordList = () => {
               </td>
             </tr>
           ))}
-          <tr className={styles.newLine}>
-            <td>Новое слово</td>
-            <td>
-              <input
-                type="text"
-                name="english"
-                value={newWord.english}
-                onChange={(e) => handleChange(e)}
-                className={!newWord.english ? styles.error : ''}
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                name="transcription"
-                value={newWord.transcription}
-                onChange={(e) => handleChange(e)}
-                className={!newWord.transcription ? styles.error : ''}
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                name="russian"
-                value={newWord.russian}
-                onChange={(e) => handleChange(e)}
-                className={!newWord.russian ? styles.error : ''}
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                name="tags"
-                value={newWord.tags}
-                onChange={(e) => handleChange(e)}
-                className={!newWord.tags ? styles.error : ''}
-              />
-            </td>
-            <td>
-              <button onClick={addWord}
-                disabled={!newWord.english || !newWord.transcription || !newWord.russian || !newWord.tags}
-                title={(!newWord.english || !newWord.transcription || !newWord.russian || !newWord.tags) ? "Заполните все поля" : "Добавить"}
-                className={(!newWord.english || !newWord.transcription || !newWord.russian || !newWord.tags) ? styles.btnDisNew : styles.newLine}
-              >
-                Добавить
-                <svg
-                  className={(!newWord.english || !newWord.transcription || !newWord.russian || !newWord.tags) ? styles.svgDis : ''}
-                  fill="rgb(87, 87, 87)"
-                  id="Layer_1" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m16 16a1 1 0 0 1 -1 1h-2v2a1 1 0 0 1 -2 0v-2h-2a1 1 0 0 1 0-2h2v-2a1 1 0 0 1 2 0v2h2a1 1 0 0 1 1 1zm6-5.515v8.515a5.006 5.006 0 0 1 -5 5h-10a5.006 5.006 0 0 1 -5-5v-14a5.006 5.006 0 0 1 5-5h4.515a6.958 6.958 0 0 1 4.95 2.05l3.484 3.486a6.951 6.951 0 0 1 2.051 4.949zm-6.949-7.021a5.01 5.01 0 0 0 -1.051-.78v4.316a1 1 0 0 0 1 1h4.316a4.983 4.983 0 0 0 -.781-1.05zm4.949 7.021c0-.165-.032-.323-.047-.485h-4.953a3 3 0 0 1 -3-3v-4.953c-.162-.015-.321-.047-.485-.047h-4.515a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3z" />
-                  <path fill="none" />
-                </svg>
-              </button>
-            </td>
-          </tr>
+
+
+
+
         </tbody>
       </table>
     </div >
