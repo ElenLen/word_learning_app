@@ -8,7 +8,7 @@ import WordList from './components/WordList/WordList';
 import Flashcards from './components/Flashcards/Flashcards';
 import Training from './components/Training/Training';
 import NoMatch from './components/NoMatch/NoMatch';
-
+// import WordsMobX from './components/MobXContent/WordsMobX';
 
 function App() {
 
@@ -21,6 +21,7 @@ function App() {
           {/* <Main /> */}
           <Routes>
             <Route path="/" element={<WordList />} />
+            {/* <Route path="/words" element={<WordsMobX />} /> */}
             <Route path="/words" element={<WordList />} />
             <Route path="/flashcards" element={<Flashcards />} />
             <Route path="/training" element={<Training />} />
